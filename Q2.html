@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.min.js"></script>
+    <style>
+    	th, td{
+      	border: 1px solid #dddddd;
+       }
+    </style>
+</head>
+<script>
+
+
+
+ d3.csv('https://raw.githubusercontent.com/TheFedExpress/CUNY_DATA_608/master/module5/js_examples/Hello%20World/data/presidents.csv',function (rows){
+   var string = '<table><th>'
+   var keys = Object.keys(rows[0])
+   var cols = keys.length
+   for (x = 0; x < cols; x++){
+     string += '<td>' + keys[x] + '</td>'
+   }
+   string += '</th>'
+   var length = rows.length
+   for (i=0; i <22; i++){
+     string += '<tr>'
+     var row = rows[i]
+     for (j = 0; j < cols; j++){
+       string += '<td>'
+       string += row[keys[j]]
+       string += '</td>'
+     }
+     string += '</tr>'
+
+   }
+   string += '</table>'
+   document.write(string)
+ })
+
+</script>

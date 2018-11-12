@@ -1,0 +1,50 @@
+<head>
+  <style>
+  	th, td{
+    	border: 1px solid #dddddd;
+     }
+  </style>
+  <script>
+    function reverse_it(string){
+      var reversed = string.split('').reverse().join('')
+      return (reversed)
+    }
+    function output_reverse(){
+      var input = document.getElementById('rev_string').value;
+      var reversed = reverse_it(input);
+      document.getElementById('string_out').innerHTML = reversed
+    }
+
+    function mults(){
+	  var tbl = ''
+      var num = document.getElementById('my_num').value;
+      tbl += '<table>'
+      for(i = 0; i < 5; i++){
+        tbl += '<tr>'
+        for (j = 1; j < 5; j++){
+          tbl += '<td>' + num *(i*4 + j) + '</td>'
+        }
+        tbl += '</tr>'
+      }
+      tbl += '</table>'
+      document.getElementById('tbl_out').innerHTML = tbl
+    }
+  </script>
+</head>
+<body>
+  <form>
+    Enter a String:<br>
+    <input type = "text" id = "rev_string">
+    <input type = "button" onClick = "output_reverse()" value = "reverse">
+  </form>
+    <p>
+      Your string reversed is:
+    </p>
+      <div id = "string_out"></div>
+    <form>
+      Enter a number:<br>
+      <input type = "number" id = 'my_num'>
+      <input type = "button" onClick = "mults()" value = "Mults">
+      <div id = 'tbl_out'></div>
+   	</form>
+  </body>
